@@ -31,7 +31,72 @@ body
   padding: 1em;
 }
 
+.transactions
+{  
+  
+}
 
+.transaction
+{
+  border-top: 1px solid #ddd;
+  color: #F94D35;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0.8em;
+}
+
+.transaction__delete
+{
+  margin-left: auto;
+  color: blue;
+}
+
+.transaction__delete:active
+{
+  color: red;
+}
+
+.transaction__state
+{
+  margin-right: 0.5em;  
+}
+
+.transaction--completed
+{
+  color: #fcb3a8;
+}
+
+.transaction--completed .transaction__text
+{
+  display: inline-block;
+  position: relative;
+}
+
+.transaction--completed .transaction__state
+{
+  visibility: hidden;
+}
+
+.transaction--completed .transaction__state::before
+{
+  content: "✔";
+  visibility: visible;  
+  color: red;
+  position: relative;
+  top: -0.2em;
+}
+
+.transaction--completed .transaction__text::before
+{
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 0.1em;
+  width: 100%;
+  margin-top: calc(1em / 2 - 2px);
+  border-bottom: 3px solid #F94D35;
+}
 
 .btn
 {
