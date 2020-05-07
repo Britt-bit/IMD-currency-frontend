@@ -1,4 +1,4 @@
-var btnSignup = document.querySelector(".signup button").addEventListener("click", signup => {
+var btnSignup = document.querySelector(".signup button").addEventListener("click", (e) => {
     let firstname = document.querySelector('#firstname').value;
     let lastname = document.querySelector('#lastname').value;
     let username = document.querySelector('#email').value;
@@ -20,13 +20,13 @@ var btnSignup = document.querySelector(".signup button").addEventListener("click
         return response.json();
     }).then(json => {
         if(json.status === "success"){
-            let feedback = document.querySelector(".alert");
-            feedback.textContent = "Sign up complete!";
-            feedback.classList.remove('hidden');
-
             let token = json.data.token;
             localStorage.setItem("token", token);
             window.location.href = "index.html";
+        } else {
+            let feedback = document.querySelector(".alert");
+            feedback.textContent = "Sign up failed.";
+            feedback.classList.remove('hidden');
         }
     })
 });
