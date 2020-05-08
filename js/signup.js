@@ -3,8 +3,23 @@ var btnSignup = document.querySelector(".signup button").addEventListener("click
     let lastname = document.querySelector('#lastname').value;
     let username = document.querySelector('#email').value;
     let password = document.querySelector('#password').value;
-    //console.log("button clicked");
 
+
+    function validateEmail(){
+        let username = document.querySelector('#email').value;
+        let pattern = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+.([a-zA-Z])+([a-zA-Z])+/;
+        let isValid = pattern.test(username);
+        //console.log(isValid);
+        let isTrue = username.indexOf("@student.thomasmore.be");
+        if(isValid == true && isTrue !== -1){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+if(validateEmail() === true){
+    console.log("functie uigevoerd");
     fetch('http://localhost:3000/api/user_data/signup', {
         method: "post",
         headers: {
@@ -28,5 +43,11 @@ var btnSignup = document.querySelector(".signup button").addEventListener("click
             feedback.textContent = "Sign up failed.";
             feedback.classList.remove('hidden');
         }
-    })
+    }) 
+} else {
+    let feedback = document.querySelector(".alert");
+    feedback.textContent = "Email must end on @student.thomasmore.be";
+    feedback.classList.remove('hidden');
+}
+    
 });
