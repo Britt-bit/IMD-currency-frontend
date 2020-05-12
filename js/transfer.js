@@ -5,10 +5,13 @@ fetch("http://localhost:3000/api/transaction", {
 }).then(result => {
     return result.json();
 }).then(json => {
-    console.log(json);
+    //console.log(json.data);
 }).catch(err => {
     window.location.href = "login.html";
 });
+
+
+
 
 /* add transaction to database */
 
@@ -20,9 +23,6 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
     let message = document.querySelector('#message').value;
 
     console.log(toUser);
-    console.log(coins);
-    console.log(reason);
-    console.log(message);
     
         fetch("http://localhost:3000/api/transaction", {
             method: "post",
