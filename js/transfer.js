@@ -15,7 +15,7 @@ fetch("http://localhost:3000/api/transaction", {
 var btnTransfer = document.querySelector(".transfer--btn").addEventListener("click", (e) => {
     console.log('clicked');
     let toUser = document.querySelector('#name').value;
-    let coins = document.querySelector('#coins').value;
+    let coins = document.querySelector('#amount').value;
     let reason = document.querySelector('#reason').value;
     let message = document.querySelector('#message').value;
 
@@ -42,14 +42,7 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
             return result.json();
         }).then(json => {
             console.log(json);
-            let transaction = 
-            console.log(json.data._id);
-            console.log(json.data.toUser);
-            console.log(json.data.coins);
-            console.log(json.data.reason);
-                console.log(json.data.message);
-                `<p> Thank you for your transaction</p>`;
-             document.querySelector(".transaction__new").insertAdjacentHTML('afterend', transaction);
+            window.location.href = "thankYou.html";
         }).catch(err => {
             console.log(err)
         }); e.preventDefault();
