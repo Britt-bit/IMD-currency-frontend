@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transfers</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="dist/login.css">
+    <!--<link rel="stylesheet" href="css/style.css">-->
     <link rel="stylesheet" href="css/transfer.css">
 </head>
 <body>
     <div class="app">
-        <h2 class="title">New transfer</h2>
+        <div class="logo"></div>
         <div class="alert hidden">
           Here is some feedback
         </div>
@@ -20,21 +21,21 @@
                 <option value=""></option>
             </select>-->
             <form action="" autocomplete="off">
-                <div class="autocomplete">
-                    <label for="name">Name</label>
-                    <input type="text" class="input--text myInput--field" name="name" id="myInput">
+                <div id="align--horizontal" class="autocomplete">
+                    <label class="hidden" for="name">Name</label>
+                    <input type="text" class="input--text myInput--field" name="name" id="myInput" placeholder="Name">
                 </div>
             </form>
             <!--<input type="text" class="input--text" name="name" id="name">-->
           </div>
           
-          <div>
-            <label for="amount">Amount</label>
-            <input type="number" class="input--text" name="amount" id="amount" placeholder="amount">
+          <div id="align--horizontal">
+            <label class="hidden" for="amount">Amount</label>
+            <input type="number" class="input--text" name="amount" id="amount" placeholder="amount" placeholder="Amount">
           </div>
 
-          <div>
-              <label for="reason">Reason</label>
+          <div id="align--horizontal">
+              <label class="hidden" for="reason">Reason</label>
               <select name="reason" class="input--text" id="reason">
                 <option value="design_help">Design help</option>  
                 <option value="development_help">Development help</option>
@@ -44,9 +45,9 @@
               </select>
           </div>
 
-          <div>
-            <label for="message">Message</label>
-            <input type="text" class="input--text" name="message" id="message">
+          <div id="align--horizontal">
+            <label class="hidden" for="message">Message</label>
+            <input type="text" class="input--text" name="message" id="message" placeholder="Message">
           </div>
           
           <button class="btn btn--primary transfer--btn">Confirm</button>

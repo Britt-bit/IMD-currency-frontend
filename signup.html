@@ -4,37 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="dist/login.css">
 </head>
 <body>
     <div class="app">
-        <h2 class="title">Create an account</h2>
+
+      <div class="logo"></div>
         <div class="alert hidden">
           Here is some feedback
         </div>
         <div class="signup">
-          <div>
-            <label for="firstname">Firstname</label>
-            <input type="text" class="input--text" name="firstname" id="firstname">
+          <div id="align--horizontal">
+            <label class="hidden" for="firstname">Firstname</label>
+            <input type="text" class="input--text" name="firstname" id="firstname" placeholder="Firstname">
           </div>
-          <div>
-            <label for="lastname">Lastname</label>
-            <input type="text" class="input--text" name="lastname" id="lastname">
+          <div id="align--horizontal">
+            <label class="hidden" for="lastname">Lastname</label>
+            <input type="text" class="input--text" name="lastname" id="lastname" placeholder="Lastname">
           </div>
-          <div>
-            <label for="email">Email</label>
-            <input type="text" class="input--text" name="email" id="email">
-          </div>
-          
-          <div>
-            <label for="password">Password</label>
-            <input type="password" class="input--text" name="password" id="password">
+          <div id="align--horizontal">
+            <label class="hidden" for="email">Email</label>
+            <input type="text" class="input--text" name="email" id="email" placeholder="E-mail">
           </div>
           
-          <button class="btn btn--primary">Let's go</button>
+          <div id="align--horizontal">
+            <label class="hidden" for="password">Password</label>
+            <input type="password" class="input--text" name="password" id="password" placeholder="Password">
+          </div>
+
+          <div id="align--horizontal">
+            <a class="btn btn--secondary" href="login.html">Login</a>
+            <button class="btn btn--primary">Signup</button>
+          </div>
         </div>
         
-        <a class="btn btn--secondary" href="login.html">Already have an account?</a>
+        
       </div>
 </body>
 </html>

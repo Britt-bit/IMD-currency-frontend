@@ -202,6 +202,9 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
                 window.location.href = "thankYou.html";
             } else {
                 console.log("oh no");
+                let feedback = document.querySelector(".alert");
+                feedback.textContent = "Something went wrong";
+                feedback.classList.remove('hidden');
             }
             
         }).catch(err => {
