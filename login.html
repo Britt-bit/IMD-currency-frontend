@@ -4,28 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="dist/login.css">
 </head>
 <body>
     <div class="app">
-        <h2 class="title">Log in</h2>
+        <div class="logo"></div>
+        
         <div class="alert hidden">
           Here is some feedback
         </div>
+
         <div class="login">
-          <div>
-            <label for="email">Email</label>
-            <input type="text" class="input--text" name="email" id="email">
+          <div id="align--horizontal">
+            <label class="hidden" for="email">Email</label>
+            <input type="text" class="input--text" name="email" id="email" placeholder="E-mail">
           </div>
           
-          <div>
-            <label for="password">Password</label>
-            <input type="password" class="input--text" name="password" id="password">
+          <div id="align--horizontal">
+            <label class="hidden" for="password">Password</label>
+            <input type="password" class="input--text" name="password" id="password" placeholder="Password">
           </div>
           
-          <button class="btn btn--primary login__btn">Let's go</button>
+          <div id="align--horizontal">
+            <a class="btn btn--secondary" href="signup.html">Create account</a>
+            <button class="btn btn--primary login__btn">Login</button>
         </div>
-        <a class="btn btn--secondary" href="signup.html">Don't have an account yet?</a>
+      </div>
       </div>
 </body>
 </html>

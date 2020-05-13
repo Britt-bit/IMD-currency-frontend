@@ -1,0 +1,26 @@
+.btn {
+    color: $color-black;
+    border-radius: 1em;
+    padding: 0.5em 0;
+    display: inline-block;
+    font-family: $font-sansserif;
+    font-size: 1.2em;
+    border: 0;
+    margin: 0 1em 0 1em;
+}
+
+.btn--primary{
+    background-color: $primary-btn;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.btn:active{
+    position: relative;
+    top: 1px;
+}
+
+#align--horizontal{
+    text-align: center;
+}
+
