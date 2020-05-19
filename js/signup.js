@@ -1,3 +1,5 @@
+const base_url = "https://imd-coin.herokuapp.com/";
+
 var btnSignup = document.querySelector(".signup button").addEventListener("click", (e) => {
     let firstname = document.querySelector('#firstname').value;
     let lastname = document.querySelector('#lastname').value;
@@ -20,7 +22,7 @@ var btnSignup = document.querySelector(".signup button").addEventListener("click
     
 if(validateEmail() === true){
     console.log("functie uigevoerd");
-    fetch('http://localhost:3000/api/user_data/signup', {
+    fetch(base_url + 'api/user_data/signup', {
         method: "post",
         headers: {
             'Content-Type': 'application/json'

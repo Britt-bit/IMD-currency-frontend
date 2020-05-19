@@ -1,9 +1,11 @@
+const base_url = "https://imd-coin.herokuapp.com/";
+
 var btnLogin = document.querySelector(".login button").addEventListener("click", (e) => {
     let username = document.querySelector('#email').value;
     let password = document.querySelector('#password').value;
     console.log("button clicked");
 
-    fetch('http://localhost:3000/api/user_data/login', {
+    fetch(base_url + 'api/user_data/login', {
         method: "post",
         headers: {
             'Content-Type': 'application/json'

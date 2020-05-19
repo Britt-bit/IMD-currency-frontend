@@ -1,8 +1,9 @@
+const base_url = "https://imd-coin.herokuapp.com/";
 //var autocompleteNames = new Array();
 var autocompleteNames = [];
 var autocompleteId = [];
 
-fetch("http://localhost:3000/api/user_data/", {
+fetch(base_url + "api/user_data/", {
     'headers': {
         'Authorization': 'Bearer ' + localStorage.getItem('token')
     }

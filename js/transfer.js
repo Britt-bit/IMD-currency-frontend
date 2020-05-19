@@ -1,5 +1,7 @@
+const base_url = "https://imd-coin.herokuapp.com/";
+
 let toUserID;
-fetch("http://localhost:3000/api/transaction", {
+fetch(base_url + "api/transaction", {
     'headers': {
         'Authorization': 'Bearer ' + localStorage.getItem('token')
     }
@@ -17,7 +19,7 @@ fetch("http://localhost:3000/api/transaction", {
 let autocompleteNames = [];
 let autocompleteId = [];
 
-fetch("http://localhost:3000/api/my_user_data/", {
+fetch(base_url + "api/my_user_data/", {
     'headers': {
         'Authorization': 'Bearer ' + localStorage.getItem('token')
     }
@@ -178,7 +180,7 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
     let message = document.querySelector('#message').value;
  
     
-        fetch("http://localhost:3000/api/transaction", {
+        fetch(base_url + "api/transaction", {
             method: "post",
             'headers': {
                 'Content-Type': 'application/json',
@@ -209,7 +211,7 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
             if(json.user.coins >= coins){
                 console.log("jeej you have enough");
 
-                fetch('http://localhost:3000/api/user_data/'+toUserID, {
+                fetch( base_url + 'api/user_data/'+toUserID, {
                   method: "put",
                   headers: {
                       'Content-Type': 'application/json',
