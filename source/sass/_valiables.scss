@@ -8,3 +8,18 @@ $allert: #ff4444;
 $font-sansserif: Arial, Helvetica, sans-serif;
 
 $logo-image: "../source/includes/IMD_coin.png";
+$check-image: "../source/includes/checkmark.png";
+
+@mixin text {
+    font-family: $font-sansserif;
+    display: flex;
+    justify-content: center;
+}
+
+@mixin image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    display: inline-block;
+}
