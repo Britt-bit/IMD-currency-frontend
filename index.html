@@ -14,5 +14,9 @@
 </body>
 </html>
 
-<script src="js/index.js"></script>
+<script>
+    if(!localStorage.getItem("token")){
+        window.location.href = "login.html";
+    }
+</script>
 
