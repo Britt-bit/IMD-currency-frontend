@@ -188,8 +188,6 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
             },
             
             body: JSON.stringify({
-              
-                
                 //"fromUser": fromUser,
                 "toUser": toUser,
                 "coins": coins,
@@ -202,13 +200,18 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
         .then(result => {
             return result.json();
         }).then(json => {
-            let transactionCoins = json.data.coins;
-            let fromUser = json.data.fromUser;
-            let fromUserCoins = json.user.coins;
-            
-            console.log(json.user);
          
-            if(json.user.coins >= coins){
+          if(json.data == undefined){
+            console.log("oh no");
+                let feedback = document.querySelector(".alert");
+                feedback.textContent = "Something went wrong";
+                feedback.classList.remove('hidden');
+          }
+          else if(json.user.coins >= coins){
+              let fromUserCoins = json.user.coins;
+              let transactionCoins = json.data.coins;
+              let fromUser = json.data.fromUser;
+            
                 console.log("jeej you have enough");
 
                 fetch( base_url + 'api/user_data/'+toUserID, {

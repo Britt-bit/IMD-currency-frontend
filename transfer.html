@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transfers</title>
-    <link rel="stylesheet" href="dist/login.css">
-    <!--<link rel="stylesheet" href="css/style.css">-->
-    <link rel="stylesheet" href="css/transfer.css">
+    <link rel="stylesheet" href="dist/transfer.css">
+
 </head>
 <body>
     <div class="app">
-        <div class="logo"></div>
+        <div><h1>New transfer</h1></div>
         <div class="alert hidden">
           Here is some feedback
         </div>
-        <div class="login">
+        <div class="base">
           <div>
             <!--<label for="name">Name</label>
             <select name="name" id="name">
@@ -23,7 +22,7 @@
             <form action="" autocomplete="off">
                 <div id="align--horizontal" class="autocomplete">
                     <label class="hidden" for="name">Name</label>
-                    <input type="text" class="input--text myInput--field" name="name" id="myInput" placeholder="Name">
+                    <input type="text" class="input--text myInput--field autocomplete" name="name" id="myInput" placeholder="Name">
                 </div>
             </form>
             <!--<input type="text" class="input--text" name="name" id="name">-->
@@ -36,7 +35,7 @@
 
           <div id="align--horizontal">
               <label class="hidden" for="reason">Reason</label>
-              <select name="reason" class="input--text" id="reason">
+              <select name="reason" class="input--text select" id="reason">
                 <option value="design_help">Design help</option>  
                 <option value="development_help">Development help</option>
                 <option value="feedback">feedback</option>

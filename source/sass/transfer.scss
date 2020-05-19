@@ -1,6 +1,11 @@
 @import "./valiables";
 @import 'components/buttons';
 @import 'components/textfield';
-@import 'components/logo';
 @import 'components/allert';
+@import 'components/text';
 @import 'components/body';
+@import 'components/dropdown';
+.base{
+    padding-top: 1.5em;
+}
+
