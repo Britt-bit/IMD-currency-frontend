@@ -6,7 +6,7 @@ fetch("http://localhost:3000/api/transaction", {
 }).then(result => {
     return result.json();
 }).then(json => {
-    //console.log(json.data);
+    console.log(json.data);
 }).catch(err => {
     window.location.href = "login.html";
 });
@@ -14,8 +14,8 @@ fetch("http://localhost:3000/api/transaction", {
 
 // AUTOCOMPLETE SCRIPT
 //var autocompleteNames = new Array();
-var autocompleteNames = [];
-var autocompleteId = [];
+let autocompleteNames = [];
+let autocompleteId = [];
 
 fetch("http://localhost:3000/api/my_user_data/", {
     'headers': {
@@ -24,7 +24,7 @@ fetch("http://localhost:3000/api/my_user_data/", {
 }).then(result => {
     return result.json();
 }).then(json => {
-    //console.log(json.data.data[0]);
+    //console.log(json.data);
     //var array = {};
     for(i=0; i<json.data.data.length; i++){
         //array[i] = new Array(json.data.data[i]._id, json.data.data[i].firstname + " " + json.data.data[i].lastname);
@@ -40,10 +40,10 @@ fetch("http://localhost:3000/api/my_user_data/", {
 function autocomplete(userInp, arr, idarr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
-    var currentFocus;
+    let currentFocus;
     /*execute a function when someone writes in the text field:*/
     userInp.addEventListener("input", function(e) {
-        var a, b, i, val = this.value;
+        let a, b, i, val = this.value;
         /*close any already open lists of autocompleted values*/
         closeAllLists();
         if (!val) { return false;}
@@ -80,7 +80,7 @@ function autocomplete(userInp, arr, idarr) {
     });
     /*execute a function presses a key on the keyboard:*/
     userInp.addEventListener("keydown", function(e) {
-        var x = document.getElementById(this.id + "autocomplete-list");
+        let x = document.getElementById(this.id + "autocomplete-list");
         if (x) x = x.getElementsByTagName("div");
         if (e.keyCode == 40) {
           /*If the arrow DOWN key is pressed,
@@ -115,15 +115,15 @@ function autocomplete(userInp, arr, idarr) {
     }
     function removeActive(x) {
       /*a function to remove the "active" class from all autocomplete items:*/
-      for (var i = 0; i < x.length; i++) {
+      for (let i = 0; i < x.length; i++) {
         x[i].classList.remove("autocomplete-active");
       }
     }
     function closeAllLists(elmnt) {
       /*close all autocomplete lists in the document,
       except the one passed as an argument:*/
-      var x = document.getElementsByClassName("autocomplete-items");
-      for (var i = 0; i < x.length; i++) {
+      let x = document.getElementsByClassName("autocomplete-items");
+      for (let i = 0; i < x.length; i++) {
         if (elmnt != x[i] && elmnt != userInp) {
         x[i].parentNode.removeChild(x[i]);
       }
@@ -137,11 +137,11 @@ function autocomplete(userInp, arr, idarr) {
 
 function getSelectedId(){
 
-  var listAllAutocompleteOptions = document.querySelectorAll(".autoCompleteOption");
+  let listAllAutocompleteOptions = document.querySelectorAll(".autoCompleteOption");
 
   //  console.log(listAllAutocompleteOptions);
   
-  for (var i = 0; i < listAllAutocompleteOptions.length; i++) {
+  for (let i = 0; i < listAllAutocompleteOptions.length; i++) {
     (function(index) {
       listAllAutocompleteOptions[index].addEventListener("click", function(e){
             toUserID = (e.target.classList[1]);
@@ -170,6 +170,8 @@ autocomplete(document.getElementById("myInput"), autocompleteNames, autocomplete
 
 var btnTransfer = document.querySelector(".transfer--btn").addEventListener("click", (e) => {
     //console.log('clicked');
+    
+     //let fromUser = json.user._id;
     let toUser = toUserID;
     let coins = document.querySelector('#amount').value;
     let reason = document.querySelector('#reason').value;
@@ -184,6 +186,9 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
             },
             
             body: JSON.stringify({
+              
+                
+                //"fromUser": fromUser,
                 "toUser": toUser,
                 "coins": coins,
                 "reason": reason,
@@ -195,11 +200,39 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
         .then(result => {
             return result.json();
         }).then(json => {
-            //console.log(result);
+            let transactionCoins = json.data.coins;
+            let fromUser = json.data.fromUser;
+            let fromUserCoins = json.user.coins;
+            
             console.log(json.user);
-            if(json.user > coins){
+         
+            if(json.user.coins >= coins){
                 console.log("jeej you have enough");
-                window.location.href = "thankYou.html";
+
+                fetch('http://localhost:3000/api/user_data/'+toUserID, {
+                  method: "put",
+                  headers: {
+                      'Content-Type': 'application/json',
+                      'Authorization': 'Bearer ' + localStorage.getItem('token')
+                  }, 
+                  body: JSON.stringify({
+                    "transactionCoins": transactionCoins,
+                    "toUserID": toUser,
+                    "fromUser": fromUser,
+                    "fromUserCoins": fromUserCoins
+                  })
+              }).then(result => {
+                  return result.json();
+              }).then(json => {
+                  console.log(json);
+                  if(json.status === "success"){
+                    window.location.href = "thankYou.html";
+                  }
+                  
+              }).catch(err => {
+                console.log(err)
+            })
+
             } else {
                 console.log("oh no");
                 let feedback = document.querySelector(".alert");

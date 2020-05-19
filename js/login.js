@@ -24,7 +24,7 @@ var btnLogin = document.querySelector(".login button").addEventListener("click",
         } else {
             console.log("fail")
             let feedback = document.querySelector(".alert");
-            feedback.textContent = "login in failed.";
+            feedback.textContent = "login failed.";
             feedback.classList.remove('hidden');
         }
     })
