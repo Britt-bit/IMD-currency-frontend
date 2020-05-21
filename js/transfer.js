@@ -1,4 +1,15 @@
 const base_url = "https://imd-coin.herokuapp.com/";
+const error_url = "http://localhost:3000/api/"
+
+
+primus = Primus.connect("http://localhost:3000", {
+  reconnect: {
+      max: Infinity // Number: The max delay before we try to reconnect.
+    , min: 500 // Number: The minimum delay before we try reconnect.
+    , retries: 10 // Number: How many times we should try to reconnect.
+  }
+});
+ 
 
 let toUserID;
 fetch(base_url + "api/transaction", {
@@ -19,7 +30,7 @@ fetch(base_url + "api/transaction", {
 let autocompleteNames = [];
 let autocompleteId = [];
 
-fetch(base_url + "api/my_user_data/", {
+fetch(base_url + "api/all_user_data/", {
     'headers': {
         'Authorization': 'Bearer ' + localStorage.getItem('token')
     }
@@ -230,7 +241,14 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
                   return result.json();
               }).then(json => {
                   console.log(json);
+
+                  primus.write({
+                    "action": "updatedCoins",
+                    "data": json
+                  });
+
                   if(json.status === "success"){
+
                     window.location.href = "thankYou.html";
                   }
                   
