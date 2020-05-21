@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="dist/index.css">
 </head>
+
 <body>
     <div class="app">
         <div class="coins">
@@ -13,21 +15,21 @@
         </div>
 
         <div id="align--horizontal"></div>
-            <a class="btn btn--primary" href="#">History</a>
-            <a class="btn btn--primary" href="transfer.html">New transfer</a>
-        </div>
+        <a class="btn btn--primary" href="history.html">History</a>
+        <a class="btn btn--primary" href="transfer.html">New transfer</a>
+    </div>
 
-        <div class="transfer--history">
+    <div class="transfer--history">
 
-        </div>
+    </div>
 
     </div>
 </body>
+
 </html>
 
 <script>
-    if(!localStorage.getItem("token")){
+    if (!localStorage.getItem("token")) {
         window.location.href = "login.html";
     }
 </script>
-
