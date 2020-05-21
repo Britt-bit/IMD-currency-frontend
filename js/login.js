@@ -1,4 +1,5 @@
 const base_url = "https://imd-coin.herokuapp.com/";
+const error_url = "http://localhost:3000/api/"
 
 var btnLogin = document.querySelector(".login button").addEventListener("click", (e) => {
     let username = document.querySelector('#email').value;
