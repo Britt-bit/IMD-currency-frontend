@@ -1,7 +1,7 @@
 const base_url = "https://imd-coin.herokuapp.com/";
 const error_url = "http://localhost:3000/api/"
 
-primus = Primus.connect("http://localhost:3000", {
+primus = Primus.connect(base_url, {
   reconnect: {
       max: Infinity // Number: The max delay before we try to reconnect.
     , min: 500 // Number: The minimum delay before we try reconnect.
