@@ -12,6 +12,7 @@ primus = Primus.connect(base_url, {
  
 
 let toUserID;
+let toNameI;
 
 if(!localStorage.getItem("token")){
   window.location.href = "login.html";
@@ -41,7 +42,6 @@ fetch(base_url + "api/all_user_data/", {
 
 //var autocompleteNames = ["Stijn Bouckaert", "Britt My Baby", "Olaf Snowman", "Boobie Goodie"];
 //var autocompleteId = ["idStijn", "idBritt", "idOlaf", "idBoobie"];
-
 
 function autocomplete(userInp, arr, idarr) {
     /*the autocomplete function takes two arguments,
@@ -151,7 +151,8 @@ function getSelectedId(){
     (function(index) {
       listAllAutocompleteOptions[index].addEventListener("click", function(e){
             toUserID = (e.target.classList[1]);
-            
+            toNameI = (this.children[1].value);
+            console.log(this.children[1].value);
           })
     })(i);
 }
@@ -179,6 +180,7 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
     
      //let fromUser = json.user._id;
     let toUser = toUserID;
+    let toName = toNameI;
     let coins = document.querySelector('#amount').value;
     let reason = document.querySelector('#reason').value;
     let message = document.querySelector('#message').value;
@@ -193,6 +195,7 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
             
             body: JSON.stringify({
                 //"fromUser": fromUser,
+                "toName": toName,
                 "toUser": toUser,
                 "coins": coins,
                 "reason": reason,
@@ -225,6 +228,7 @@ var btnTransfer = document.querySelector(".transfer--btn").addEventListener("cli
                       'Authorization': 'Bearer ' + localStorage.getItem('token')
                   }, 
                   body: JSON.stringify({
+                    "toName": toName,
                     "transactionCoins": transactionCoins,
                     "toUserID": toUser,
                     "fromUser": fromUser,
