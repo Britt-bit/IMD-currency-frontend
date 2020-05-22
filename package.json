@@ -18,8 +18,6 @@
   },
   "homepage": "https://github.com/Britt-bit/IMD-currency-frontend#readme",
   "devDependencies": {
-    "gulp-image": "^6.1.0",
-    "gulp-sass": "^4.1.0",
     "sass": "^1.26.5"
   }
 }
