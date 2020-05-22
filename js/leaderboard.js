@@ -22,8 +22,7 @@ let appendLeaderboard = (json) => {
         var leaderboard =
             `
     
-            <li>${element.firstname}</li>
-            <p>with ${element.coins} coins</p>
+            <li class="Leaderboard--listItem">${element.firstname} ${element.lastname} with ${element.coins} coins</li>
        
         `;
         document.querySelector(".Leaderboard").insertAdjacentHTML('beforeend', leaderboard);

@@ -1,7 +1,6 @@
-.history {
+.Leaderboard {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: auto;
     border: black solid 1px;
     background-color: white;
@@ -9,14 +8,8 @@
     margin: 2%
 }
 
-.history__info {
+.Leaderboard--listItem {
     font-size: small;
     text-align: left;
     padding-left: 10%;
-}
-
-.history__info--bold {
-    font-size: medium;
-    padding-left: 10%;
-
 }

@@ -20,20 +20,20 @@ let appendHistory = (json) => {
     json.data.data.forEach(element => {
 
         var newTransfer =
-            `<div class="transfers">
-            <h3>From User:</h3>
-            <p id="fromUser">"${element.fromUser}"</p>
+            `<div class="history">
+            <h2 class = "history__info--bold">From User:</h2>
+            <h2 class = "history__info" id="fromUser">"${element.fromUser}"</h2>
             
-            <h3>To User: </h3>
-            <p id="toUser">"${element.toUser}"</p>
+            <h2 class = "history__info--bold">To User: </h2>
+            <h2 class = "history__info">"${element.toUser}"</h2>
     
-            <h3>Amount:</h3>
-            <p id="amountCoins">"${element.coins}" coins</p>
+            <h2 class = "history__info--bold">Amount:</h2>
+            <h2 class = "history__info">"${element.coins}" coins</h2>
             
-            <h3>Reason:</h3>
-            <p id="Reason">"${element.reason}" </p>
-            <h3>Message:</h3>
-            <p id="Message">"${element.message}" </p>
+            <h2 class = "history__info--bold">Reason:</h2>
+            <h2 class = "history__info">"${element.reason}" </h2>
+            <h2 class = "history__info--bold">Message:</h2>
+            <h2 class = "history__info">"${element.message}" </h2>
             </div>`;
         document.querySelector(".transfers").insertAdjacentHTML('afterend', newTransfer);
     });
