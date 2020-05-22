@@ -1,64 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>transfers</title>
-    <link rel="stylesheet" href="dist/app.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transfers</title>
+  <link rel="stylesheet" href="dist/app.css">
 
 </head>
 <style>
-  .base{
+  .base {
     padding-top: 1.5em;
-}
+  }
 </style>
+
 <body>
-    <div class="app">
-        <div><h1>New transfer</h1></div>
-        <div class="alert hidden">
-          Here is some feedback
-        </div>
-        <div class="base">
-          <div>
-            <!--<label for="name">Name</label>
+  <div class="app">
+    <div class="logo"></div>
+    <div id="align--horizontal"></div>
+    <a class="btn btn--primary" href="index.html">Home</a>
+    <a class="btn btn--primary" href="history.html">History</a>
+    <a class="btn btn--primary" href="transfer.html">New transfer</a>
+    <a class="btn btn--primary" href="leaderboard.html">Leaderboard</a>
+    <a href="logout.html" class="btn btn--secondary">Logout</a>
+
+    <div>
+      <h1>New transfer</h1>
+    </div>
+    <div class="alert hidden">
+      Here is some feedback
+    </div>
+    <div class="base">
+      <div>
+        <!--<label for="name">Name</label>
             <select name="name" id="name">
                 <option value=""></option>
             </select>-->
-            <form action="" autocomplete="off">
-                <div id="align--horizontal" class="autocomplete">
-                    <label class="hidden" for="name">Name</label>
-                    <input type="text" class="input--text myInput--field autocomplete" name="name" id="myInput" placeholder="Name">
-                </div>
-            </form>
-            <!--<input type="text" class="input--text" name="name" id="name">-->
+        <form action="" autocomplete="off">
+          <div id="align--horizontal" class="autocomplete">
+            <label class="hidden" for="name">Name</label>
+            <input type="text" class="input--text myInput--field autocomplete" name="name" id="myInput"
+              placeholder="Name">
           </div>
-          
-          <div id="align--horizontal">
-            <label class="hidden" for="amount">Amount</label>
-            <input type="number" class="input--text" name="amount" id="amount" placeholder="amount" placeholder="Amount">
-          </div>
-
-          <div id="align--horizontal">
-              <label class="hidden" for="reason">Reason</label>
-              <select name="reason" class="input--text select" id="reason">
-                <option value="design_help">Design help</option>  
-                <option value="development_help">Development help</option>
-                <option value="feedback">feedback</option>
-                <option value="meeting_deadline">Meeting deadlines</option>
-                <option value="other">Other</option>
-              </select>
-          </div>
-
-          <div id="align--horizontal">
-            <label class="hidden" for="message">Message</label>
-            <input type="text" class="input--text" name="message" id="message" placeholder="Message">
-          </div>
-          
-          <button class="btn btn--primary transfer--btn">Confirm</button>
-        </div>
+        </form>
+        <!--<input type="text" class="input--text" name="name" id="name">-->
       </div>
-    
+
+      <div id="align--horizontal">
+        <label class="hidden" for="amount">Amount</label>
+        <input type="number" class="input--text" name="amount" id="amount" placeholder="amount" placeholder="Amount">
+      </div>
+
+      <div id="align--horizontal">
+        <label class="hidden" for="reason">Reason</label>
+        <select name="reason" class="input--text select" id="reason">
+          <option value="design_help">Design help</option>
+          <option value="development_help">Development help</option>
+          <option value="feedback">feedback</option>
+          <option value="meeting_deadline">Meeting deadlines</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div id="align--horizontal">
+        <label class="hidden" for="message">Message</label>
+        <input type="text" class="input--text" name="message" id="message" placeholder="Message">
+      </div>
+
+      <button class="btn btn--primary transfer--btn">Confirm</button>
+    </div>
+  </div>
+
 </body>
+
 </html>
 <script src="https://imd-coin.herokuapp.com/primus/primus.js"></script>
 <script src="js/transfer.js"></script>

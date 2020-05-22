@@ -1,0 +1,15 @@
+.Leaderboard {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    border: black solid 1px;
+    background-color: white;
+    border-radius: 1%;
+    margin: 2%
+}
+
+.Leaderboard--listItem {
+    font-size: small;
+    text-align: left;
+    padding-left: 10%;
+}
