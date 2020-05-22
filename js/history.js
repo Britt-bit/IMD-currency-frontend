@@ -34,6 +34,7 @@ let appendHistory = (json) => {
             <h2 class = "history__info">"${element.reason}" </h2>
             <h2 class = "history__info--bold">Message:</h2>
             <h2 class = "history__info">"${element.message}" </h2>
+            </br> <hr> </br>
             </div>`;
         document.querySelector(".transfers").insertAdjacentHTML('afterend', newTransfer);
     });
