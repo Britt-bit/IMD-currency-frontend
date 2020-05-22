@@ -1,0 +1,1 @@
+const base_url = "https://imd-coin.herokuapp.com/";
