@@ -22,10 +22,10 @@ let appendHistory = (json) => {
         var newTransfer =
             `<div class="history">
             <h2 class = "history__info--bold">From User:</h2>
-            <h2 class = "history__info" id="fromUser">"${element.fromUser}"</h2>
+            <h2 class = "history__info" id="fromUser">"${element.fromName}"</h2>
             
             <h2 class = "history__info--bold">To User: </h2>
-            <h2 class = "history__info">"${element.toUser}"</h2>
+            <h2 class = "history__info">"${element.toName}"</h2>
     
             <h2 class = "history__info--bold">Amount:</h2>
             <h2 class = "history__info">"${element.coins}" coins</h2>
@@ -68,7 +68,6 @@ fetch(base_url + "api/my_user_data/", {
             "action": "updateHistory",
             "data": json
         });
-        console.log(json);
         // appendHistory(json);
     })
 })
