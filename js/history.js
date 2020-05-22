@@ -52,7 +52,9 @@ fetch(base_url + "api/my_user_data/", {
         
                     <h3>Reason:</h3>
                     <p id="Reason">"${element.reason}" </p>
-                </div>`;
+                </div>
+                ------------------------------------------------
+                `;
             document.querySelector(".transfers").insertAdjacentHTML('afterend', newTransfer);
         });
 
