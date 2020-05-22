@@ -12,17 +12,10 @@ primus = Primus.connect("http://localhost:3000", {
  
 
 let toUserID;
-fetch(base_url + "api/transaction", {
-    'headers': {
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
-    }
-}).then(result => {
-    return result.json();
-}).then(json => {
-    console.log(json.data);
-}).catch(err => {
-    window.location.href = "login.html";
-});
+
+if(!localStorage.getItem("token")){
+  window.location.href = "login.html";
+}
 
 
 // AUTOCOMPLETE SCRIPT
