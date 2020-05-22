@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History</title>
+    <link rel="stylesheet" href="dist/index.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <div class="">
+            <h3>Transaction Id:</h3>
+            <p>43312143</p>
+
+            <h3>From User:</h3>
+            <p>Vincent</p>
+
+            <h3>To User: </h3>
+            <p>Britt</p>
+
+            <h3>Amount:</h3>
+            <p>10 coins</p>
+
+            <h3>Reason:</h3>
+            <p>Design help</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    if (!localStorage.getItem("token")) {
+        window.location.href = "login.html";
+    }
+</script>
+<script src="js/history.js"></script>
