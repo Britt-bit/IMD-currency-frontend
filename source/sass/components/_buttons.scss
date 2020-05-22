@@ -1,7 +1,7 @@
 .btn {
     color: $color-black;
     border-radius: 1em;
-    padding: 0.4em 0;
+    padding: 0.5em 0;
     display: inline-block;
     font-family: $font-sansserif;
     font-size: 1.2em;
@@ -11,8 +11,8 @@
 
 .btn--primary{
     background-color: $primary-btn;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1.4em;
+    padding-right: 1.4em;
 }
 
 .btn:active{
