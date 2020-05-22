@@ -38,7 +38,7 @@ fetch(base_url + "api/my_user_data/", {
 }).then(result => {
     return result.json();
 }).then(json => {
-
+    console.log(json);
     appendCoins(json);
     console.log(json.data.data[0].coins);
     document.querySelector("#amountCoins").innerHTML = json.data.data[0].coins + " coins";
