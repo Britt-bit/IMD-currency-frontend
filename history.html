@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>History</title>
+    <link rel="stylesheet" href="/css/history.css">
     <link rel="stylesheet" href="dist/app.css">
 </head>
 
@@ -16,14 +17,15 @@
         <a class="btn btn--primary" href="history.html">History</a>
         <a class="btn btn--primary" href="transfer.html">New transfer</a>
         <a class="btn btn--primary" href="leaderboard.html">Leaderboard</a>
+        <a href="logout.html" class="btn btn--secondary">Logout</a>
+
         <div class="transfers">
-
         </div>
-
     </div>
 </body>
 
 </html>
+<script src="https://imd-coin.herokuapp.com/primus/primus.js"></script>
 <script src="js/history.js"></script>
 <script>
     if (!localStorage.getItem("token")) {
